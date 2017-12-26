@@ -688,6 +688,9 @@
     <string name="slim_blacklist_add_apps_title">Add app</string>
     <string name="slim_blacklist_add_apps_summary">Tap here to add, tap on added app to remove it</string>
 
+    <!-- DT2S on Statusbar -->
+    <string name="double_tap_sleep_gesture_title">Double tap status bar to sleep</string>
+
     <!-- AOSP and Slim recents icon pack support -->
     <string name="recents_icon_pack_title">Icon Pack</string>
     <string name="recents_icon_pack_summary">Apply a custom icon pack for apps in the panel</string>

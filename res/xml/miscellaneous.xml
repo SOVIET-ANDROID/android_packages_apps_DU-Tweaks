@@ -23,4 +23,9 @@
         android:title="@string/screenshot_edit_app"
         android:summary="@string/screenshot_edit_app_summary" />
 
+		<com.dirtyunicorns.tweaks.preferences.SystemSettingSwitchPreference            
+				android:key="double_tap_sleep_gesture"
+        android:title="@string/double_tap_sleep_gesture_title"
+        android:defaultValue="false" />
+
 </PreferenceScreen>
