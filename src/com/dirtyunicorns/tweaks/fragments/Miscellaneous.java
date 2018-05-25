@@ -31,6 +31,7 @@ import android.widget.Toast;
 
 import com.android.internal.logging.nano.MetricsProto;
 import com.android.internal.logging.nano.MetricsProto.MetricsEvent;
+import com.android.settings.development.DevelopmentSettings;
 import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
 import com.android.settings.Utils;
@@ -42,7 +43,8 @@ public class Miscellaneous extends SettingsPreferenceFragment implements
         Preference.OnPreferenceChangeListener, Preference.OnPreferenceClickListener {
 
     private static final int DIALOG_SCREENSHOT_EDIT_APP = 1;
-
+		private static final String KEY_DEVICE_PART = "xiaomi_part";
+    private static final String KEY_DEVICE_PART_PACKAGE_NAME = "com.screwd.settings.device";
     private Preference mScreenshotEditAppPref;
     private ScreenshotEditPackageListAdapter mPackageAdapter;
 
@@ -50,6 +52,11 @@ public class Miscellaneous extends SettingsPreferenceFragment implements
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         addPreferencesFromResource(R.xml.miscellaneous);
+
+				// Xiaomi Parts
+        if (!DevelopmentSettings.isPackageInstalled(getActivity(), KEY_DEVICE_PART_PACKAGE_NAME)) {
+            getPreferenceScreen().removePreference(findPreference(KEY_DEVICE_PART));
+        }
 
         mPackageAdapter = new ScreenshotEditPackageListAdapter(getActivity());
         mScreenshotEditAppPref = findPreference("screenshot_edit_app");
