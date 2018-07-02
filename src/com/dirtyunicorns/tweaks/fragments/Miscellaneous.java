@@ -36,6 +36,7 @@ import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
 import com.android.settings.Utils;
 
+
 import com.dirtyunicorns.tweaks.preferences.ScreenshotEditPackageListAdapter;
 import com.dirtyunicorns.tweaks.preferences.ScreenshotEditPackageListAdapter.PackageItem;
 
@@ -54,7 +55,7 @@ public class Miscellaneous extends SettingsPreferenceFragment implements
         addPreferencesFromResource(R.xml.miscellaneous);
 
 				// Xiaomi Parts
-        if (!DevelopmentSettings.isPackageInstalled(getActivity(), KEY_DEVICE_PART_PACKAGE_NAME)) {
+        if (!com.android.internal.util.du.Utils.isPackageInstalled(getActivity(), KEY_DEVICE_PART_PACKAGE_NAME)) {
             getPreferenceScreen().removePreference(findPreference(KEY_DEVICE_PART));
         }
 
